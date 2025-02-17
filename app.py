@@ -102,6 +102,8 @@ def preprocess_image(img):
 def postprocess_tensor(tensor):
     return tensor.squeeze(0).numpy().astype(np.uint8)
 
+
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Use 5000 if PORT is not set
+    port = int(os.environ.get("PORT", 5000))  # Render provides PORT dynamically
     app.run(host="0.0.0.0", port=port, debug=True)
