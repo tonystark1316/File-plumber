@@ -1,4 +1,7 @@
-/* General Styling */
+/* ======================= */
+/*       HEAD SECTION      */
+/* ======================= */
+
 body {
   margin: 0;
   font-family: "Smooch Sans", serif;
@@ -13,13 +16,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 20px;
 }
 
 /* Left Section (Logo + App Name) */
 .left-section {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between logo and app name */
+  gap: 10px;
 }
 
 .logo img {
@@ -32,12 +36,13 @@ body {
   font-weight: bold;
   font-size: 2rem;
   color: rgb(236, 236, 236);
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
-/* Navigation Links */
+/* Navigation */
 .rl {
   display: flex;
+  align-items: center;
 }
 
 .relationlinks {
@@ -45,20 +50,19 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 20px; /* Space between navigation links */
+  gap: 20px;
   font-size: 1.3rem;
-  justify-content: flex-end;
 }
 
 .relationlinks li a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 2 rem;
+  font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .relationlinks li a:hover {
-  color: rgb(175, 9, 36); /* Highlight color on hover */
+  color: rgb(175, 9, 36);
 }
 
 /* Hamburger Menu (Mobile) */
@@ -66,15 +70,32 @@ body {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  gap: 5px;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: rgb(0, 0, 0);
-  margin: 4px 0;
+  width: 30px;
+  height: 4px;
+  background: white;
+  transition: all 0.3s ease-in-out;
 }
 
+/* Hamburger Animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ======================= */
+/*       MAIN SECTION      */
+/* ======================= */
+
+/* Converter Sections */
 .converter,
 .bg-removal,
 .upscaler {
@@ -151,9 +172,13 @@ body {
   background: #181818;
   color: rgb(175, 9, 36);
 }
+
+/* Operations Section */
 .operation {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .phrase {
@@ -165,6 +190,7 @@ body {
   -webkit-text-fill-color: transparent;
   padding-left: 10px;
 }
+
 .switch {
   border-radius: 20px;
   height: 40px;
@@ -176,9 +202,10 @@ body {
   font-size: medium;
   font-weight: bold;
   margin-left: 5px;
-  height: auto;
   border: 2px solid #181818;
 }
+
+/* Section Spacing */
 .conv-con {
   display: flex;
   padding-left: 0.9cm;
@@ -187,6 +214,7 @@ body {
 .bg-con {
   padding-left: 1.9cm;
 }
+
 .up-con {
   padding-left: 1.9cm;
 }
@@ -198,35 +226,44 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .uplabel {
   font-family: "Smooch Sans", serif;
   font-size: 20px;
   color: rgb(175, 9, 36);
 }
+
 .fac-perc {
   background-color: rgb(175, 9, 36);
   border-radius: 20px;
   padding-left: 10px;
 }
 
+/* ======================= */
+/*       LAST SECTION      */
+/* ======================= */
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .head {
-    flex-wrap: wrap; /* Allow wrapping for mobile */
+    flex-wrap: wrap;
   }
 
   .operation {
-    display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .rl {
     display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.8); /* Background for mobile nav */
-    padding: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
   }
 
   .rl.active {
@@ -235,7 +272,12 @@ body {
 
   .relationlinks {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .relationlinks li a {
+    font-size: 1.8rem;
   }
 
   .hamburger {
