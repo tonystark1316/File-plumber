@@ -52,6 +52,11 @@
           <li><a href="/templates/contact.html">Contact us</a></li>
         </ul>
       </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
 
     <main class="main-container">
@@ -173,6 +178,17 @@
           input.files.length > 0 ? input.files[0].name : "No file chosen";
         input.nextElementSibling.textContent = fileName;
       }
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".rl");
+
+        if (hamburger) {
+          hamburger.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            hamburger.classList.toggle("open"); // Add an 'open' class for animation
+          });
+        }
+      });
     </script>
   </body>
 </html>
