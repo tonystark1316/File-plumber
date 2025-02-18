@@ -1,12 +1,63 @@
 body {
-  background: url(/static/images/bg.png) no-repeat center center fixed;
+  margin: 0;
+  font-family: "Smooch Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  background: url("/static/images/bg.png") no-repeat center center fixed;
   background-size: cover;
 }
+
+/* Header Layout */
 .head {
-  display: inline-flex;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 5px;
+}
+
+/* Left Section (Logo + App Name) */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and app name */
+}
+
+.logo img {
+  display: block;
+  border-radius: 70px;
+}
+
+.appname {
+  font-family: "Smooch Sans", serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(236, 236, 236);
+  margin: 0; /* Remove default margin */
+}
+
+/* Navigation Links */
+.rl {
+  display: flex;
+}
+
+.relationlinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Space between navigation links */
+  font-size: 1.3rem;
+  justify-content: flex-end;
+}
+
+.relationlinks li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 2 rem;
+  transition: color 0.3s ease;
+}
+
+.relationlinks li a:hover {
+  color: rgb(175, 9, 36); /* Highlight color on hover */
 }
 
 h1 {
@@ -40,10 +91,7 @@ nav {
   font-size: 21.5px;
   padding-left: 4cm;
 }
-.relationlinks li {
-  display: inline;
-  padding-left: 30px;
-}
+
 li a {
   color: #dbd6d6;
   font-family: "Smooch Sans", serif;
