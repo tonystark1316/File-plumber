@@ -5,33 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
     <link href="/static/style-contact.css" rel="stylesheet" />
-  </head>
-  <body>
-    <font>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap"
-        rel="stylesheet"
-      />
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
-        rel="stylesheet"
-      />
-      <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet" />
-      <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet" />
-    </font>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet" />
+  </head>
+
+  <body>
     <header class="head">
-      <h1>Contact us</h1>
-      <nav>
+      <div class="left-section">
+        <a class="logo">
+          <img
+            src="/static/images/logo.png"
+            alt="Logo"
+            width="70"
+            height="70"
+          />
+        </a>
+        <h1 class="appname">Contact us</h1>
+      </div>
+
+      <nav class="rl">
         <ul class="relationlinks">
           <li><a href="/">Home</a></li>
           <li><a href="/templates/about.html">About</a></li>
           <li><a href="/templates/contact.html">Contact us</a></li>
         </ul>
       </nav>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
+
     <div class="container">
       <div class="panel">
         <div class="ring">
@@ -39,14 +56,11 @@
           <div class="border">
             <p class="title">Pavithran</p>
             <div class="slide">
-              <h6 class="para">Pavithran</h6>
               <h6 class="para">Web developer/ designer</h6>
               <div class="line">
                 <h6 class="para">
                   Pavithran is a creative visionary dedicated to bridging the
-                  gap between design and functionality. His expertise lies in
-                  crafting intuitive user interfaces and enhancing the overall
-                  aesthetic appeal of digital platforms.
+                  gap between design and functionality.
                 </h6>
               </div>
             </div>
@@ -60,35 +74,28 @@
           <div class="border">
             <p class="title">Naveendran</p>
             <div class="slide">
-              <h6 class="para">Naveendran</h6>
               <h6 class="para">Web developer/ designer</h6>
               <div class="line">
                 <h6 class="para">
                   Naveendran is a tech enthusiast with a passion for creating
-                  user-friendly software solutions. With years of experience in
-                  web development and a knack for problem-solving, he
-                  specializes in designing platforms that make complex tasks
-                  simple.
+                  user-friendly software solutions.
                 </h6>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="panel">
         <div class="ring">
           <div class="card card3"></div>
           <div class="border">
             <p class="title">Vignesh</p>
             <div class="slide">
-              <h6 class="para">Vignesh</h6>
               <h6 class="para">Web designer</h6>
               <div class="line">
                 <h6 class="para">
-                  Vignesh is a results-driven developer with a focus on
-                  efficiency and innovation. With a deep understanding of file
-                  processing and optimization, he excels at building robust
-                  tools tailored to users’ needs.
+                  Vignesh is a results-driven developer focused on efficiency.
                 </h6>
               </div>
             </div>
@@ -96,6 +103,7 @@
         </div>
       </div>
     </div>
+
     <article>
       <div class="p-link">
         <img src="/static/images/ig.png" width="50px" height="50px" />
@@ -118,9 +126,18 @@
         <a href="https://www.instagram.com/tonystark_ind/">
           <img src="/static/images/ig.png" width="50px" height="50px" />
         </a>
-
         <img src="/static/images/wa.png" width="50px" height="50px" />
       </div>
     </article>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const relationLinks = document.querySelector(".relationlinks");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        relationLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
