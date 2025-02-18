@@ -7,28 +7,50 @@
     <link href="/static/style-about.css" rel="stylesheet" />
   </head>
   <body>
-    <font>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap"
-        rel="stylesheet"
-      />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
-        rel="stylesheet"
-      />
-    </font>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Header -->
     <header class="head">
-      <h1>About the project</h1>
-      <nav class="tag1">
+      <div class="left-section">
+        <a class="logo">
+          <img
+            src="/static/images/logo.png"
+            alt="Logo"
+            width="70"
+            height="70"
+          />
+        </a>
+        <h1 class="appname">About the project</h1>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="rl">
         <ul class="relationlinks">
           <li><a href="/">Home</a></li>
           <li><a href="/templates/about.html">About</a></li>
           <li><a href="/templates/contact.html">Contact us</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
+
+    <!-- Main Content -->
     <article>
       <h3>File plumber</h3>
       <p>
@@ -42,7 +64,6 @@
         our platform is here to make your life easier.
       </p>
       <h5>Our Features</h5>
-
       <ul class="list">
         <li>
           Convert Files Effortlessly: Transform your files to and from formats
@@ -83,8 +104,28 @@
         Try our platform now and experience the convenience of having all your
         file conversion and background removal needs in one place. Because when
         it comes to productivity and innovation, File plumber delivers every
-        time.
+        time..
       </p>
     </article>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+      function displayFileName(input) {
+        const fileName =
+          input.files.length > 0 ? input.files[0].name : "No file chosen";
+        input.nextElementSibling.textContent = fileName;
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".rl");
+
+        if (hamburger) {
+          hamburger.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            hamburger.classList.toggle("open"); // Add an 'open' class for animation
+          });
+        }
+      });
+    </script>
   </body>
 </html>
